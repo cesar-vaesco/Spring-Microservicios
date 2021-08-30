@@ -1,5 +1,8 @@
 package com.vaescode.cursos.model;
 
+import javax.xml.bind.annotation.XmlRootElement;
+
+@XmlRootElement
 public class Curso {
 
 	private String nombre;

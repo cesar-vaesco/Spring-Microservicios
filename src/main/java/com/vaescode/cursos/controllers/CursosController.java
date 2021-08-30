@@ -10,7 +10,6 @@ import javax.annotation.PostConstruct;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.vaescode.cursos.model.Curso;
@@ -33,6 +32,11 @@ public class CursosController {
 		cursos.add(new Curso("Spring",20,"tarde"));
 	}
 	
+	@GetMapping(value="cursos-xml", produces = MediaType.APPLICATION_XML_VALUE)
+	public List<Curso>getCursosXML(){
+		return cursos;
+	}
+	
 	@GetMapping(value="cursos", produces = MediaType.APPLICATION_JSON_VALUE)
 	public List<Curso>getCursos(){
 		return cursos;
@@ -42,6 +46,12 @@ public class CursosController {
 	public Curso getCurso() {
 		return new Curso("Java",100, "Mañana");
 	}
+	
+	@GetMapping(value = "curso-xml", produces = MediaType.APPLICATION_XML_VALUE)
+	public Curso getCursoXML() {
+		return new Curso("Java",100, "Mañana");
+	}
+	
 	
 	@GetMapping(value = "curso/{name}", produces = MediaType.APPLICATION_JSON_VALUE)
 	public List<Curso> buscarCurso(@PathVariable("name") String nombre) {
