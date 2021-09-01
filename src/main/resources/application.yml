@@ -1,0 +1,15 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    password: cesar
+    url: jdbc:mysql://localhost:3306/agenda2?serverTimezone=America/Mexico_City&useSSL=false
+    username: root
+  jpa:
+    database-platform: org.hibernate.dialect.MySQL8Dialect
+    show-sql: true
+
+#propiedades para que hibernate cree adecuadamente las instrucciones S
+    hibernate: 
+     naming: 
+      implicit-strategy: org.hibernate.boot.model.naming.ImplicitNamingStrategyLegacyJpaImpl
+      physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl

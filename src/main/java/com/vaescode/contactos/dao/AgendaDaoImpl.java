@@ -3,6 +3,7 @@ package com.vaescode.contactos.dao;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Repository;
 
 import com.vaescode.contactos.model.Contacto;

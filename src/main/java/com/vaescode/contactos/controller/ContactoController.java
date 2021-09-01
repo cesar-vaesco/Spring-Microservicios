@@ -26,10 +26,9 @@ public class ContactoController {
 		return service.recuperarContactos();
 	}
 
-	@SuppressWarnings("unchecked")
 	@GetMapping(value = "contactos/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
-	public List<Contacto> recuperarContactos(@PathVariable("id") int id) {
-		return (List<Contacto>) service.buscarContacto(id);
+	public Contacto recuperarContactos(@PathVariable("id") int id) {
+		return service.buscarContacto(id);
 	}
 
 	@PostMapping(value = "contacto", 
